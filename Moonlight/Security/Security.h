@@ -1,0 +1,3 @@
+namespace Security {
+	void Initialize();
+}
