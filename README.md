@@ -1,9 +1,5 @@
 __leaked by Desire2K17#7025__
 
-Hello, I am leaking Moonlight source WITHOUT the owners permission.
-
-Why? you may ask.
-
 He is a liar, guilt tripper and a scammer.
 
 Before we get into why I'm releasing this, I was the dev of Moonlight. 
@@ -18,6 +14,7 @@ I was enjoying my time on other games while he was dming me, he said "This is cl
 
 "2157" <-- Owner
 
+He is a liar, guilt tripper and a scammer.
 He pretends to be russian
 He told his staff that the "previous owner of Moonlight" killed himself
 He scammed his staff member who also happens to be my friend so he was talking to me the whole time
