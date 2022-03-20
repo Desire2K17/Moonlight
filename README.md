@@ -1,3 +1,8 @@
+**update**
+2157 is still paying new dev to paste features in, even though he claims he is recoding the cheat, lmfao.
+https://media.discordapp.net/attachments/955054084489113670/955106295420170300/unknown.png
+https://cdn.discordapp.com/attachments/955054084489113670/955107119131131964/unknown.png
+
 __leaked by Desire2K17#7025__
 
 Before we get into why I'm releasing this, I was the dev of Moonlight. 
