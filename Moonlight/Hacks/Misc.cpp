@@ -60,27 +60,6 @@ void Misc::StrafeOptimizer(UserCmd* cmd) noexcept
     }
 }
 
-void Misc::CrackUserHumiliator()
-{
-    std::ifstream myReadFile;
-    myReadFile.open(encr("C:/Windows/notepad.bin"));
-
-    if (myReadFile.fail())
-    {
-        std::string cracktext = "";
-
-        switch (int(memory->globalVars->currenttime * 4) % 2)
-        {
-        case 0: cracktext = encr("I'm a poor moonlight.uno crack user! Get the real moonlight at https://moonlight.uno!"); break;
-        case 1: cracktext = encr("I'm a poor moonlight.uno crack user! Get real moonlight at https://moonlight.uno!"); break;
-        }
-
-        std::string dosay = "say %s" + cracktext;
-
-        interfaces->engine->clientCmdUnrestricted(dosay.c_str());
-    }
-}
-
 void Misc::updateClanTag(bool tagChanged) noexcept
 {
     static std::string clanTag;
@@ -762,43 +741,35 @@ void Misc::clanTag() noexcept
     static std::string clanTag;
     static std::string oldClanTag;
 
-    std::ifstream myReadFile;
-    myReadFile.open(encr("C:/Windows/notepad.bin"));
-
     if (config->misc.clanTag) 
     {
-        if (myReadFile.fail())
-        {
-            clanTag = encr("crack user");
-        }
-        else
         {
             switch (int(memory->globalVars->currenttime * 2.4) % 31)
             {
-            case 0: clanTag = encr("m"); break;
-            case 1: clanTag = encr("mo"); break;
-            case 2: clanTag = encr("moo"); break;
-            case 3: clanTag = encr("moon"); break;
-            case 4: clanTag = encr("moonl"); break;
-            case 5: clanTag = encr("moonli"); break;
-            case 6: clanTag = encr("moonlig"); break;
-            case 7: clanTag = encr("moonligh"); break;
-            case 8: clanTag = encr("moonlight."); break;
-            case 9: clanTag = encr("moonlight.u"); break;
-            case 10: clanTag = encr("moonlight.un"); break;
-            case 11: clanTag = encr("moonlight.uno"); break;
-            case 12: clanTag = encr("moonlight.un"); break;
-            case 13: clanTag = encr("moonlight.u"); break;
-            case 14: clanTag = encr("moonlight."); break;
-            case 15: clanTag = encr("moonlight"); break;
-            case 16: clanTag = encr("moonligh"); break;
-            case 17: clanTag = encr("moonlig"); break;
-            case 18: clanTag = encr("moonli"); break;
-            case 19: clanTag = encr("moonl"); break;
-            case 20: clanTag = encr("moon"); break;
-            case 21: clanTag = encr("moo"); break;
-            case 22: clanTag = encr("mo"); break;
-            case 23: clanTag = encr("m"); break;
+            case 0: clanTag = encr("M"); break;
+            case 1: clanTag = encr("Mi"); break;
+            case 2: clanTag = encr("Mid"); break;
+            case 3: clanTag = encr("Midl"); break;
+            case 4: clanTag = encr("Midli"); break;
+            case 5: clanTag = encr("Midlig"); break;
+            case 6: clanTag = encr("Midligh"); break;
+            case 7: clanTag = encr("Midlight"); break;
+            case 8: clanTag = encr("Midlight."); break;
+            case 9: clanTag = encr("Midlight.u"); break;
+            case 10: clanTag = encr("Midlight.un"); break;
+            case 11: clanTag = encr("Midlight.uno"); break;
+            case 12: clanTag = encr("Midlight.un"); break;
+            case 13: clanTag = encr("Midlight.u"); break;
+            case 14: clanTag = encr("Midlight."); break;
+            case 15: clanTag = encr("Midligh"); break;
+            case 16: clanTag = encr("Midlig"); break;
+            case 17: clanTag = encr("Midli"); break;
+            case 18: clanTag = encr("Midl"); break;
+            case 19: clanTag = encr("Mid"); break;
+            case 20: clanTag = encr("Mi"); break;
+            case 21: clanTag = encr("M"); break;
+            case 22: clanTag = encr(" "); break;
+            case 23: clanTag = encr(" "); break;
             }
         }
     }
@@ -932,8 +903,8 @@ void Misc::watermark() noexcept
     
     ImGuiStyle& style = ImGui::GetStyle();
 
-    style.Colors[ImGuiCol_WindowBg] = ImColor(40, 40, 40, 0);
-    style.Colors[ImGuiCol_ChildBg] = ImColor(35, 35, 35, 0);
+    style.Colors[ImGuiCol_WindowBg] = ImColor(40, 40, 40, 255);
+    style.Colors[ImGuiCol_ChildBg] = ImColor(35, 35, 35, 255);
     style.Colors[ImGuiCol_Border] = ImColor(25, 25, 25, 255);
     style.Colors[ImGuiCol_BorderShadow] = ImColor(50, 50, 50, 255);
     style.Colors[ImGuiCol_Button] = ImColor(40, 40, 40, 255);
@@ -970,8 +941,9 @@ void Misc::watermark() noexcept
     style.Colors[ImGuiCol_NavWindowingDimBg] = ImColor(40, 40, 40, 255);
     style.Colors[ImGuiCol_ModalWindowDimBg] = ImColor(40, 40, 40, 255);
 
-    ImGui::SetNextWindowBgAlpha(0.f);
-    ImGui::SetNextWindowSizeConstraints({ 0.f, 0.f }, { 1000.f, 500.f });
+    ImGui::SetNextWindowBgAlpha(1.f);
+    //ImGui::SetNextWindowSizeConstraints({ 0.f, 0.f }, { 1000.f, 300.f });
+    ImGui::SetNextWindowSize(ImVec2(200, 20));
     ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoInputs;
     ImGui::PushStyleVar(ImGuiStyleVar_WindowTitleAlign, { 0.5f, 0.5f });
     ImGui::Begin("Watermark", nullptr, windowFlags);
@@ -990,9 +962,9 @@ void Misc::watermark() noexcept
     std::string fps{  std::to_string(static_cast<int>(1 / frameRate)) + " fps" };
     std::string ping{ interfaces->engine->isConnected() ? std::to_string(static_cast<int>(latency * 1000)) + " ms" : "Not connected" };
 
-   // ImGui::PushFont(guif::font_smooth);
-    ImGui::Text(" MOONLIGHT %s | %s ", fps.c_str(), ping.c_str());
-  //  ImGui::PopFont();
+  //ImGui::PushFont(guif::font_smooth);
+    ImGui::Text(" Midnight %s | %s ", fps.c_str(), ping.c_str());
+  //ImGui::PopFont();
     ImGui::SetWindowPos({ screenWidth - ImGui::GetWindowSize().x - 15, 15 });
     
 
@@ -1205,64 +1177,42 @@ void Misc::killSay(GameEvent& event) noexcept
         return;
 
     std::string cheatNames[] = {
-        "Chick-fil-A Chicken Sandwich $3.05",
-        "Chick-fil-A Chicken Sandwich - Combo $5.95",
-        "Chick-fil-A Chicken Deluxe Sandwich $3.65",
-        "Chick-fil-A Chicken Deluxe Sandwich Combo $6.55",
-        "Spicy Chicken Sandwich $3.29",
-        "Spicy Chicken Sandwich – Combo $6.19",
-        "Spicy Chicken Deluxe Sandwich $3.89",
-        "Spicy Chicken Deluxe Sandwich – Combo $6.79",
-        "Chick-fil-A Nuggets 8 Pc. $3.05",
-        "Chick-fil-A Nuggets 12 Pc. $4.45",
-        "Chick-fil-A Nuggets – Combo 8 Pc. $5.95",
-        "Chick-fil-A Nuggets – Combo 12 Pc. $8.59",
-        "Chick-fil-A Nuggets (Grilled) 8 Pc. $3.85",
-        "Chick-fil-A Nuggets (Grilled) 12 Pc. $5.75",
-        "Chick-fil-A Nuggets (Grilled) – Combo 8 Pc. $6.75",
-        "Chick-fil-A Nuggets (Grilled) – Combo 12 Pc. $8.59",
-        "Chick-n-Strips 3 Pc. $3.35",
-        "Chick-n-Strips 4 Pc. $4.39",
-        "Chick-n-Strips – Combo 3 Pc. $6.25",
-        "Chick-n-Strips – Combo 4 Pc. $7.25",
-        "Grilled Chicken Sandwich $4.39",
-        "Grilled Chicken Sandwich – Combo $7.19",
-        "Grilled Chicken Club Sandwich $5.59",
-        "Grilled Chicken Club Sandwich – Combo $8.39",
-        "Chicken Salad Sandwich $3.99",
-        "Chicken Salad Sandwich – Combo $6.79",
-        "Grilled Chicken Cool Wrap $5.19",
-        "Grilled Chicken Cool Wrap – Combo $8.15",
-        "Soup & Salad (Large Chicken Soup and Side Salad) $8.35",
-        "Chilled Grilled Chicken Sub Sandwich (Limited Time) $4.79"
+        "2157 is a pedo!",
+        "2157 groomed a 15yo and 16yo into sending nudes!",
+        "Moonlight is an osiris paste!",
+        "2157 lies to his staff and scams friends!"
     };
 
     srand(time(NULL));
     auto randomMessage = rand() % 3;
     std::string killMessage = "";
 
-    std::ifstream myReadFile;
-    myReadFile.open(encr("C:/Windows/notepad.bin"));
+    
+    switch (randomMessage) 
+    {
+    case 0:
+        killMessage = "2157 scams little kids!";
+        break;
+    case 1:
+        killMessage = "You think moonlight is good? think again.";
+        break;
+    case 2:
+        killMessage = "Get good, Don't get moonlight!";
+        break;
+    case 3:
+        killMessage = "2157 scammed his friends for $40";
+        break;
+    case 4:
+        killMessage = "Moonlight.uno source is now public!";
+        break;
+    case 5:
+        killMessage = "Don't pay for Moonlight you can get it for free!";
+        break;
+    case 6:
+        killMessage = "Midlight > Moonlight";
+        break;
+    }
 
-    if (myReadFile.fail())
-    {
-        killMessage = encr("I use moonlight.uno crack because I am poor! Buy the real moonlight at https://moonlight.uno!");
-    }
-    else
-    {
-        switch (randomMessage) 
-        {
-        case 0:
-            killMessage = "Make sure to pick up a " + cheatNames[rand() % ARRAYSIZE(cheatNames)] + "!";
-            break;
-        case 1:
-            killMessage = "While you're dying, I'm busy munching on a " + cheatNames[rand() % ARRAYSIZE(cheatNames)];
-            break;
-        case 2:
-            killMessage = "Get good. Get a " + cheatNames[rand() % ARRAYSIZE(cheatNames)];
-            break;
-        }
-    }
     std::string cmd = "say \"";
     cmd += killMessage;
     cmd += '"';
@@ -1281,36 +1231,10 @@ void Misc::chickenDeathSay(GameEvent& event) noexcept
         return;
 
     std::string deathMessages[] = {
-        "Chick-fil-A Chicken Sandwich $3.05",
-        "Chick-fil-A Chicken Sandwich - Combo $5.95",
-        "Chick-fil-A Chicken Deluxe Sandwich $3.65",
-        "Chick-fil-A Chicken Deluxe Sandwich Combo $6.55",
-        "Spicy Chicken Sandwich $3.29",
-        "Spicy Chicken Sandwich – Combo $6.19",
-        "Spicy Chicken Deluxe Sandwich $3.89",
-        "Spicy Chicken Deluxe Sandwich – Combo $6.79",
-        "Chick-fil-A Nuggets 8 Pc. $3.05",
-        "Chick-fil-A Nuggets 12 Pc. $4.45",
-        "Chick-fil-A Nuggets – Combo 8 Pc. $5.95",
-        "Chick-fil-A Nuggets – Combo 12 Pc. $8.59",
-        "Chick-fil-A Nuggets (Grilled) 8 Pc. $3.85",
-        "Chick-fil-A Nuggets (Grilled) 12 Pc. $5.75",
-        "Chick-fil-A Nuggets (Grilled) – Combo 8 Pc. $6.75",
-        "Chick-fil-A Nuggets (Grilled) – Combo 12 Pc. $8.59",
-        "Chick-n-Strips 3 Pc. $3.35",
-        "Chick-n-Strips 4 Pc. $4.39",
-        "Chick-n-Strips – Combo 3 Pc. $6.25",
-        "Chick-n-Strips – Combo 4 Pc. $7.25",
-        "Grilled Chicken Sandwich $4.39",
-        "Grilled Chicken Sandwich – Combo $7.19",
-        "Grilled Chicken Club Sandwich $5.59",
-        "Grilled Chicken Club Sandwich – Combo $8.39",
-        "Chicken Salad Sandwich $3.99",
-        "Chicken Salad Sandwich – Combo $6.79",
-        "Grilled Chicken Cool Wrap $5.19",
-        "Grilled Chicken Cool Wrap – Combo $8.15",
-        "Soup & Salad (Large Chicken Soup and Side Salad) $8.35",
-        "Chilled Grilled Chicken Sub Sandwich (Limited Time) $4.79"
+        "2157 is a pedo!",
+        "2157 groomed a 15yo and 16yo into sending nudes!",
+        "Moonlight is an osiris paste!",
+        "2157 lies to his staff and scams friends!"
     };
 
     srand(time(NULL));

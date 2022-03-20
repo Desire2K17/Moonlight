@@ -24,25 +24,9 @@
 
 using namespace std;
 
-void catchcrackuserbydesire()
-{
-    std::ifstream myReadFile;
-    myReadFile.open(encr("C:/Windows/notepad.bin"));
-
-    if (myReadFile.fail()) //checks if the file CANNOT be opened
-    {
-        MessageBox(0, encr("Poor crack user detected, laff"), encr("Moonlight.uno"), MB_OK); //cool message
-
-        exit(0); //exit
-    }
-    else
-        remove("C:/Windows/notepad.bin");
-}
-
 #ifdef _WIN32
 
 extern "C" BOOL WINAPI _CRT_INIT(HMODULE moduleHandle, DWORD reason, LPVOID reserved);
-
 
 //This is very important imo
 void CreateConsole() {

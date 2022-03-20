@@ -492,7 +492,7 @@ void GUI::renderNewGui() noexcept
                     ImGui::PopFont();
 
                     ImGui::SetCursorPos(ImVec2(500, 5));
-                    ImGui::TextColored(ImColor(155, 155, 155, menu_animation), "moonlight");
+                    ImGui::TextColored(ImColor(155, 155, 155, menu_animation), "midlight");
                 }
                 ImGui::EndGroup();
                 ImGui::PopFont();

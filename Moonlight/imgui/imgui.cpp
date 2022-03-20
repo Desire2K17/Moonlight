@@ -5300,9 +5300,9 @@ void ImGui::RenderWindowDecorations(ImGuiWindow* window, const ImRect& title_bar
             window->DrawList->AddRectFilled(title_bar_rect.Min, title_bar_rect.Max, title_bar_col, window_rounding, ImDrawCornerFlags_Top);
         }
 
-        const char* szCheatName = "Moonlight Version 6.3 [Stable]";
+        const char* szCheatName = "Midlight Version 7.1 [Stable]";
 #ifdef _DEBUG
-        szCheatName = "Moonlight Version 5.2 [Dev]";
+        szCheatName = "Midlight Version 7.1 [Dev]";
 #endif // _DEBUG
 
 

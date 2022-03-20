@@ -305,7 +305,7 @@ public:
         int crouchbugkey{ 0 };
         bool clanTag{ false };
         bool clanTag1{ false };
-        std::string clanTagCustom = "moonlight.uno";
+        std::string clanTagCustom = "Midlight.uno";
         ColorToggle showvelocity;
         bool showvelocityM{ false };
         int showvelocityPosX{ 0 };
