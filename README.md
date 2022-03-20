@@ -68,3 +68,5 @@ AllnAll, this guys a fucking idiot, I hate this community, this is the last post
 lol
 
 2157 I know you're reading this, you said you'd take "legal action", lmao. Tf they gonna do? It's a csgo cheat. lol. Nice blank threats. Your cheat is utter shit. Stop selling this shit osiris paste with an open source vac bypass.
+
+ Credits to: https://github.com/notgoodusename/OsirisAndExtra 2157 ripped your source and just paid people to add shit. 
