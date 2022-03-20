@@ -1,7 +1,5 @@
 __leaked by Desire2K17#7025__
 
-He is a liar, guilt tripper and a scammer.
-
 Before we get into why I'm releasing this, I was the dev of Moonlight. 
 
 I designed their new UI, fixed some features, added some, etc..
