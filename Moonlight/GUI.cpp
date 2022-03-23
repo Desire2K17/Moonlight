@@ -334,7 +334,7 @@ void GUI::renderNewGui() noexcept
     if (gui->domenuopen)
     {
         ImGui::SetNextWindowSize(ImVec2(menu_slide, 473));
-        ImGui::Begin("MoonlightMenuByDesire", nullptr, ImGuiWindowFlags_NoDecoration);
+        ImGui::Begin("MidlightMenu", nullptr, ImGuiWindowFlags_NoDecoration);
         {
             ImGui::SetCursorPos(ImVec2(0, 0));
             ImGui::BeginChild("TopBar", ImVec2(561, 30));

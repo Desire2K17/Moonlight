@@ -1867,6 +1867,7 @@ void Config::save(size_t id) const noexcept
         miscJson["Clock time"] = misc.clocktag;
         miscJson["Bunny hop"] = misc.bunnyHop;
         //flBhopChance
+        miscJson["velocity"] = misc.velocityGraph;
         miscJson["flBhopChance"] = misc.flBhopChance;
         miscJson["Velocity"] = misc.velocityGraph;
         miscJson["Crouch Bug"] = misc.crouchbug;

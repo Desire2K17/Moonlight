@@ -28,17 +28,6 @@ using namespace std;
 
 extern "C" BOOL WINAPI _CRT_INIT(HMODULE moduleHandle, DWORD reason, LPVOID reserved);
 
-//This is very important imo
-void CreateConsole() {
-    if (AllocConsole()) {//Allocate console
-        freopen("conin$", "r+t", stdin);//so we can write to standard out, read standard in and what not.
-        freopen("conout$", "w+t", stdout);
-        freopen("conout$", "w+t", stderr);
-        SetConsoleTitleA(encr("Moonlight.uno Debug Console"));
-        printf(encr("Console Initialized\n"));
-    }
-}
-
 void ErasePEHeaders(HANDLE hModule) {
     PIMAGE_DOS_HEADER pDosHeader = (PIMAGE_DOS_HEADER)hModule;
     PIMAGE_NT_HEADERS pNTHeader = (PIMAGE_NT_HEADERS)((DWORD)pDosHeader + (DWORD)pDosHeader->e_lfanew);
@@ -83,7 +72,6 @@ BOOL APIENTRY DllEntryPoint(HMODULE moduleHandle, DWORD reason, LPVOID reserved)
         while (!GetModuleHandleA(encr("steamnetworkingsockets.dll")))
             Sleep(200);
 #ifdef _DEBUG
-        CreateConsole();
 
 #else
         catchcrackuserbydesire();
@@ -92,6 +80,21 @@ BOOL APIENTRY DllEntryPoint(HMODULE moduleHandle, DWORD reason, LPVOID reserved)
        std::setlocale(LC_CTYPE, ".utf8");
        
        printf(encr("[+] Initializing Hooks\n"));
+
+       printf(encr("[+] Cracking moonlight\n"));
+
+       printf(encr("[+] Cracking moonlight\n"));
+
+       printf(encr("[+] Cracking moonlight\n"));
+
+       printf(encr("[+] Cracking moonlight\n"));
+
+       printf(encr("[+] Cracking moonlight\n"));
+
+       printf(encr("[+] Cracking moonlight\n"));
+
+       printf(encr("[+] Cracking moonlight\n"));
+
        hooks = std::make_unique<Hooks>(moduleHandle);
     }
     return TRUE;
