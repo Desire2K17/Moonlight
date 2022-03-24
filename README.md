@@ -1,4 +1,10 @@
 **update**
+Screenshots were found of 2157 disrespecting an old developer and threatening him and his family.
+https://cdn.discordapp.com/attachments/901655970785161277/909244344115036200/image0.png
+https://cdn.discordapp.com/attachments/901655970785161277/909246325105786910/unknown.png
+
+
+**update**
 2157 is still paying new dev to paste features in, even though he claims he is recoding the cheat, lmfao.
 https://media.discordapp.net/attachments/955054084489113670/955106295420170300/unknown.png
 https://cdn.discordapp.com/attachments/955054084489113670/955107119131131964/unknown.png
