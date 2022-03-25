@@ -257,18 +257,13 @@ void Visuals::modifySmoke(FrameStage stage) noexcept
 
 void Visuals::thirdperson() noexcept
 {
-    static bool isInThirdperson{ false };
-    static float lastTime{ 0.0f };
+    if (!config->visuals.thirdperson)
+        return;
 
-    if (GetAsyncKeyState(config->visuals.thirdpersonKey) && memory->globalVars->realtime - lastTime > 0.5f) {
-        isInThirdperson = !isInThirdperson;
-        lastTime = memory->globalVars->realtime;
-    }
+    const bool thirdPerson = config->visuals.thirdperson /* && config->visuals.thirdpersonKey */ && localPlayer && localPlayer->isAlive();
 
-    if (config->visuals.thirdperson)
-        if (memory->input->isCameraInThirdPerson = (!config->visuals.thirdpersonKey || isInThirdperson)
-            && localPlayer && localPlayer->isAlive())
-            memory->input->cameraOffset.z = static_cast<float>(config->visuals.thirdpersonDistance);
+    static auto distVar = interfaces->cvar->findVar("cam_idealdist");
+    static auto curDist = 0.0f;
 }
 
 void Visuals::removeVisualRecoil(FrameStage stage) noexcept

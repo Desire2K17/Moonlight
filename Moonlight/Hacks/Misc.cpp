@@ -900,54 +900,20 @@ void Misc::watermark() noexcept
 {
     if (!config->misc.watermark)
         return;
-    
-    ImGuiStyle& style = ImGui::GetStyle();
 
-    style.Colors[ImGuiCol_WindowBg] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_ChildBg] = ImColor(35, 35, 35, 255);
-    style.Colors[ImGuiCol_Border] = ImColor(25, 25, 25, 255);
-    style.Colors[ImGuiCol_BorderShadow] = ImColor(50, 50, 50, 255);
-    style.Colors[ImGuiCol_Button] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_ButtonActive] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_ButtonHovered] = ImColor(25, 25, 25, 255);
-    style.Colors[ImGuiCol_ScrollbarBg] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_ScrollbarGrab] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_ScrollbarGrabActive] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_ScrollbarGrabHovered] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_CheckMark] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_FrameBg] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_FrameBgHovered] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_SliderGrab] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_SliderGrabActive] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_PlotLines] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_PlotLinesHovered] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_PlotHistogram] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_PlotHistogramHovered] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_TabActive] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_TabUnfocusedActive] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_Header] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_HeaderActive] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_HeaderHovered] = ImColor(95, 75, 113, 255);
-    style.Colors[ImGuiCol_TitleBg] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_FrameBgActive] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_TitleBgActive] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_TitleBgCollapsed] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_PopupBg] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_TextSelectedBg] = ImColor(130, 60, 180, 255);
-    style.Colors[ImGuiCol_Text] = ImColor(255, 255, 255, 255);
-    style.Colors[ImGuiCol_TextDisabled] = ImColor(255, 255, 255, 255);
-    style.Colors[ImGuiCol_NavHighlight] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_NavWindowingHighlight] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_NavWindowingDimBg] = ImColor(40, 40, 40, 255);
-    style.Colors[ImGuiCol_ModalWindowDimBg] = ImColor(40, 40, 40, 255);
-
+    ImGui::SetNextWindowSize(ImVec2(0, 20));
     ImGui::SetNextWindowBgAlpha(1.f);
-    //ImGui::SetNextWindowSizeConstraints({ 0.f, 0.f }, { 1000.f, 300.f });
-    ImGui::SetNextWindowSize(ImVec2(200, 20));
-    ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoScrollWithMouse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoInputs;
-    ImGui::PushStyleVar(ImGuiStyleVar_WindowTitleAlign, { 0.5f, 0.5f });
+
+    ImGuiWindowFlags windowFlags = 
+        ImGuiWindowFlags_NoCollapse | 
+        ImGuiWindowFlags_AlwaysAutoResize | 
+        ImGuiWindowFlags_NoResize | 
+        ImGuiWindowFlags_NoScrollbar | 
+        ImGuiWindowFlags_NoScrollWithMouse | 
+        ImGuiWindowFlags_NoTitleBar | 
+        ImGuiWindowFlags_NoInputs;
+
     ImGui::Begin("Watermark", nullptr, windowFlags);
-    ImGui::PopStyleVar();
 
     const auto [screenWidth, screenHeight] = interfaces->surface->getScreenSize();
 
@@ -962,12 +928,9 @@ void Misc::watermark() noexcept
     std::string fps{  std::to_string(static_cast<int>(1 / frameRate)) + " fps" };
     std::string ping{ interfaces->engine->isConnected() ? std::to_string(static_cast<int>(latency * 1000)) + " ms" : "Not connected" };
 
-  //ImGui::PushFont(guif::font_smooth);
     ImGui::Text(" Midnight %s | %s ", fps.c_str(), ping.c_str());
-  //ImGui::PopFont();
     ImGui::SetWindowPos({ screenWidth - ImGui::GetWindowSize().x - 15, 15 });
     
-
     ImGui::End();
 }
 

@@ -378,6 +378,7 @@ void GUI::renderNewGui() noexcept
                             ImGui::PopStyleColor();
                         }
 
+                        /*
                         if (sub_tab_aim == 2)
                         {
                             ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(147, 109, 181, menu_animation));
@@ -394,7 +395,9 @@ void GUI::renderNewGui() noexcept
                                 sub_tab_aim = 2;
                             ImGui::PopStyleColor();
                         }
+                        */
 
+                        /*
                         if (sub_tab_aim == 3)
                         {
                             ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(147, 109, 181, menu_animation));
@@ -411,6 +414,7 @@ void GUI::renderNewGui() noexcept
                                 sub_tab_aim = 3;
                             ImGui::PopStyleColor();
                         }
+                        */
                     }
                     if (tabs == 1)
                     {
@@ -492,7 +496,7 @@ void GUI::renderNewGui() noexcept
                     ImGui::PopFont();
 
                     ImGui::SetCursorPos(ImVec2(500, 5));
-                    ImGui::TextColored(ImColor(155, 155, 155, menu_animation), "midlight");
+                    ImGui::TextColored(ImColor(155, 155, 155, menu_animation), "Midlight");
                 }
                 ImGui::EndGroup();
                 ImGui::PopFont();
@@ -516,7 +520,7 @@ void GUI::renderNewGui() noexcept
                         ImGui::PushFont(guif::font_smooth);
 
                         ImGui::SetCursorPos(ImVec2(7, 455));
-                        ImGui::TextColored(ImColor(155, 155, 155, menu_animation), "Version 7.0");
+                        ImGui::TextColored(ImColor(155, 155, 155, menu_animation), "Version 7.1");
 
                         if (tabs == 0)
                         {
@@ -1346,6 +1350,7 @@ void GUI::renderNewGui() noexcept
                     ImGui::EndChild();
                 }
 
+                /*
                 if (sub_tab_aim == 2)
                 {
                     ImGui::SetCursorPos(ImVec2(child_change_pos_on_tab_change, 80));
@@ -1417,7 +1422,9 @@ void GUI::renderNewGui() noexcept
                     }
                     ImGui::EndChild();
                 }
+                    */
 
+                /*
                 if (sub_tab_aim == 3)
                 {
                     ImGui::SetCursorPos(ImVec2(child_change_pos_on_tab_change, 40));
@@ -1443,10 +1450,9 @@ void GUI::renderNewGui() noexcept
                     }
                     ImGui::EndChild();
                 }
-
+            */
                 ImGui::PopFont();
             }
-
             ImGui::PushFont(guif::font_smooth);
             if (tabs == 1)
             {
@@ -1580,14 +1586,14 @@ void GUI::renderNewGui() noexcept
                         ImGui::BeginGroup();
                         {
 
-                            ImGui::Checkbox("Third Person", &config->visuals.thirdperson);
-                            hotkey(config->visuals.thirdpersonKey);
+                            //ImGui::Checkbox("Third Person", &config->visuals.thirdperson);
+                            //hotkey(config->visuals.thirdpersonKey);
 
                             ImGui::PushItemWidth(210);
                             ImGui::SetCursorPosX(-15);
                             ImGui::BeginGroup();
                             {
-                                ImGui::SliderInt("Thirdperson Distance", &config->visuals.thirdpersonDistance, 0, 1000, "%d");
+                                //ImGui::SliderInt("Thirdperson Distance", &config->visuals.thirdpersonDistance, 0, 1000, "%d");
                                 ImGui::SliderInt("Scope Transparency", &config->visuals.thirdpersonTransparency, 0, 100, "%d%%");
                                 ImGui::SliderInt("Viewmodel FOV", &config->visuals.viewmodelFov, -60, 60, "%d");
                                 ImGui::SliderInt("FOV", &config->visuals.fov, -60, 60, "%d");
@@ -1994,12 +2000,6 @@ void GUI::renderNewGui() noexcept
                         ImGui::BeginGroup();
                         {
                             ImGui::Checkbox("Clantag", &config->misc.clanTag);
-                            /*
-                            ImGui::Checkbox("Custom Clantag", &config->misc.customClanTag);
-                            if (config->misc.customClanTag)
-                                ImGui::InputText("Clantag", &config->misc.clanTagCustom);
-                            */
-
                             ImGui::Checkbox("Watermark", &config->misc.watermark);
                             ImGui::Checkbox("Spectator List", &config->misc.spectatorList);
                             ImGui::Checkbox("Killsay", &config->misc.killSay);

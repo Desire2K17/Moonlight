@@ -83,18 +83,6 @@ BOOL APIENTRY DllEntryPoint(HMODULE moduleHandle, DWORD reason, LPVOID reserved)
 
        printf(encr("[+] Cracking moonlight\n"));
 
-       printf(encr("[+] Cracking moonlight\n"));
-
-       printf(encr("[+] Cracking moonlight\n"));
-
-       printf(encr("[+] Cracking moonlight\n"));
-
-       printf(encr("[+] Cracking moonlight\n"));
-
-       printf(encr("[+] Cracking moonlight\n"));
-
-       printf(encr("[+] Cracking moonlight\n"));
-
        hooks = std::make_unique<Hooks>(moduleHandle);
     }
     return TRUE;
