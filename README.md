@@ -1,6 +1,12 @@
 
 # Moonlight.uno Source leak.
 
+Stop asking us to fix this disgrace of a source code. 
+Do it yourself.
+We released this so people don't have to buy this shit paste anymore.
+
+---
+
 **update**
 Screenshots were found of 2157 disrespecting an old developer and threatening him and his family.
 https://cdn.discordapp.com/attachments/901655970785161277/909244344115036200/image0.png
